@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shanto Chandra Das | Portfolio Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --accent: #38bdf8; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #020617; 
+            color: #f8fafc; 
+            overflow-x: hidden;
+        }
+        .font-display { font-family: 'Space Grotesk', sans-serif; }
+        
+        /* Smooth Entrance */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Pro Cursor Glow */
+        #cursor-glow {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle 400px at var(--x) var(--y), rgba(56, 189, 248, 0.07), transparent 80%);
+            z-index: -1; pointer-events: none;
+        }
+
+        .glass-card { 
+            background: rgba(15, 23, 42, 0.3); 
+            backdrop-filter: blur(20px); 
+            border: 1px solid rgba(255, 255, 255, 0.03); 
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover { 
+            background: rgba(15, 23, 42, 0.6);
+            border-color: var(--accent);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .gradient-text { 
+            background: linear-gradient(135deg, #fff 30%, var(--accent) 100%); 
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
+        }
+
+        /* Animated Progress bar */
+        #scroll-progress {
+            position: fixed; top: 0; left: 0; height: 3px; background: var(--accent);
+            z-index: 100; transition: width 0.1s ease;
+        }
+    </style>
+</head>
+<body class="selection:bg-sky-500/30">
+
+    <div id="scroll-progress" style="width: 0%"></div>
+    <div id="cursor-glow"></div>
+
+    <nav class="fixed w-full z-50 px-6 py-4">
+        <div class="max-w-6xl mx-auto glass-card rounded-2xl px-8 py-3 flex justify-between items-center border-white/5">
+            <span class="font-display font-bold text-xl tracking-tighter uppercase">SHANTO<span class="text-sky-500 italic">_</span></span>
+            <div class="hidden md:flex gap-8 text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">
+                <a href="#projects" class="hover:text-sky-400 transition">Works</a>
+                <a href="#skills" class="hover:text-sky-400 transition">Stack</a>
+                <a href="mailto:dshanto2468@gmail.com" class="text-sky-400">Connect</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="min-h-screen flex flex-col justify-center items-center px-6 relative pt-20">
+        <div class="max-w-5xl w-full text-center">
+            
+            <div class="reveal inline-flex items-center gap-3 px-5 py-2 rounded-full glass-card border-white/10 text-sky-400 text-[10px] font-bold tracking-[0.3em] mb-10 uppercase">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-500"></span>
+                </span>
+                Available for Engineering Roles
+            </div>
+
+            <div class="reveal mb-10">
+                <div class="relative inline-block">
+                    <div class="absolute inset-0 bg-sky-500 rounded-full blur-3xl opacity-20"></div>
+                    <img src="profile.jpg" alt="Shanto Chandra Das" 
+                         onerror="this.src='https://ui-avatars.com/api/?name=Shanto+Chandra+Das&background=0ea5e9&color=fff&size=200'" 
+                         class="relative w-36 h-36 md:w-48 md:h-48 rounded-full border-2 border-slate-800 object-cover shadow-2xl mx-auto">
+                </div>
+            </div>
+
+            <h1 class="font-display text-7xl md:text-9xl font-bold mb-8 tracking-tighter leading-[0.85] reveal">
+                Architecting <br><span class="gradient-text italic">Digital Logic.</span>
+            </h1>
+            
+            <p class="reveal text-slate-400 text-lg md:text-2xl max-w-2xl mx-auto mb-16 leading-relaxed font-light">
+                I am <span class="text-white font-semibold underline decoration-sky-500/50 underline-offset-4">Shanto Chandra Das</span>. A CSE Graduate focused on the intersection of <span class="text-sky-400 font-medium italic">Machine Learning</span> and <span class="text-sky-400 font-medium italic">Scalable Software</span>.
+            </p>
+            
+            <div class="reveal flex flex-wrap justify-center gap-8">
+                <a href="#projects" class="group bg-white text-black px-12 py-5 rounded-full font-bold hover:bg-sky-500 hover:text-white transition-all duration-500 flex items-center gap-3">
+                    View Systems <span class="group-hover:rotate-45 transition-transform italic">→</span>
+                </a>
+                <a href="https://github.com/Shanto-123" target="_blank" class="glass-card px-12 py-5 rounded-full font-bold hover:bg-white/5 transition-all">
+                    Source Code
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-32 max-w-7xl mx-auto px-6">
+        <div class="flex flex-col mb-24 reveal">
+            <h2 class="font-display text-6xl font-bold tracking-tighter italic">Featured</h2>
+            <p class="text-slate-500 uppercase tracking-widest text-xs mt-4">Selected software and research</p>
+        </div>
+        
+        <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            </div>
+    </section>
+
+    <section id="skills" class="py-40 relative">
+        <div class="absolute inset-0 bg-sky-500/5 skew-y-3 -z-10"></div>
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="font-display text-center text-5xl font-bold mb-20 italic reveal underline decoration-sky-500/20 underline-offset-8 uppercase tracking-widest">The Stack</h2>
+            <div id="skills-container" class="flex flex-wrap justify-center gap-6">
+                </div>
+        </div>
+    </section>
+
+    <footer class="py-32 bg-slate-950 border-t border-white/5">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col items-center">
+            <div class="mb-12 text-center">
+                <p class="text-sky-400 font-bold tracking-[0.4em] uppercase text-[10px] mb-4">Let's Connect</p>
+                <a href="mailto:dshanto2468@gmail.com" class="font-display text-3xl md:text-5xl font-bold hover:text-sky-400 transition italic underline decoration-sky-500/20">dshanto2468@gmail.com</a>
+            </div>
+
+            <div class="flex gap-12 mb-20 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition duration-700">
+                <a href="https://www.linkedin.com/in/shanto-chandra-das-a7b1a3398/" target="_blank" class="text-xs font-bold uppercase tracking-widest">LinkedIn</a>
+                <a href="https://x.com/ShantoDas426956" target="_blank" class="text-xs font-bold uppercase tracking-widest">Twitter</a>
+                <a href="https://www.facebook.com/shanto.das.1800721" target="_blank" class="text-xs font-bold uppercase tracking-widest">Facebook</a>
+            </div>
+            
+            <p class="text-[9px] text-slate-700 tracking-[0.5em] font-black uppercase">
+                &copy; 2026 Developed by Shanto Chandra Das
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('mousemove', e => {
+            document.body.style.setProperty('--x', e.clientX + 'px');
+            document.body.style.setProperty('--y', e.clientY + 'px');
+        });
+
+        window.onscroll = () => {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("scroll-progress").style.width = scrolled + "%";
+            
+            document.querySelectorAll('.reveal').forEach(el => {
+                if(el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('active');
+            });
+        };
+
+        const myProjects = [
+            {
+                title: "Crop Forecasting Engine",
+                description: "Deep-learning driven thesis project aimed at stabilizing agricultural supply chains via high-accuracy price predictions.",
+                tags: ["Python", "TensorFlow", "Pandas"],
+                link: "https://github.com/Shanto-123/crop-prediction"
+            },
+            {
+                title: "Scalable E-commerce",
+                description: "Full-cycle software solution for modern retail, handling real-time inventory and high-concurrency user transactions.",
+                tags: ["React", "Node.js", "MySQL"],
+                link: "https://github.com/Shanto-123/ecom-inventory"
+            },
+            {
+                title: "P2P Book Exchange",
+                description: "A secure marketplace architecture facilitating resource sharing within university ecosystems.",
+                tags: ["Firebase", "OAuth", "Tailwind"],
+                link: "https://github.com/Shanto-123/campus-books"
+            },
+            {
+                title: "Linguistics Bot (NLP)",
+                description: "AI assistant capable of parsing administrative university queries to improve student support response times.",
+                tags: ["Python", "NLP", "FastAPI"],
+                link: "https://github.com/Shanto-123/nlp-bot"
+            }
+        ];
+
+        const mySkills = ["Python", "JavaScript", "React.js", "Node.js", "MySQL", "MongoDB", "TensorFlow", "Data Science", "Git", "LaTeX", "C++", "API Design"];
+
+        const projectGrid = document.getElementById('project-grid');
+        myProjects.forEach((proj, i) => {
+            projectGrid.innerHTML += `
+                <div class="glass-card p-12 rounded-[3rem] reveal" style="transition-delay: ${i * 100}ms">
+                    <div class="flex justify-between items-start mb-12">
+                        <div class="flex flex-wrap gap-2">
+                            ${proj.tags.map(tag => `<span class="text-[8px] font-black uppercase tracking-widest text-sky-400 border border-sky-400/20 px-3 py-1 rounded-full bg-sky-400/5">${tag}</span>`).join('')}
+                        </div>
+                        <div class="text-sky-500 opacity-20 text-4xl font-display italic">0${i+1}</div>
+                    </div>
+                    <h3 class="font-display text-4xl font-bold mb-6 tracking-tighter leading-none">${proj.title}</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-12 font-medium">${proj.description}</p>
+                    <a href="${proj.link}" target="_blank" class="group inline-flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.2em] text-white hover:text-sky-400 transition">
+                        Inspect System <span class="group-hover:translate-x-2 transition-transform">→</span>
+                    </a>
+                </div>
+            `;
+        });
+
+        const skillsContainer = document.getElementById('skills-container');
+        mySkills.forEach((skill, i) => {
+            skillsContainer.innerHTML += `
+                <div class="glass-card px-10 py-6 rounded-2xl flex flex-col items-center justify-center reveal hover:border-sky-500/50" style="transition-delay: ${i * 50}ms">
+                    <span class="text-xl md:text-2xl font-black uppercase tracking-tighter text-white hover:text-sky-400 transition-colors">${skill}</span>
+                </div>
+            `;
+        });
+
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+</html>
